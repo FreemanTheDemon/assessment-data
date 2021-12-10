@@ -14,5 +14,26 @@ def sales_reports(log_file):
             # print the whole line to the console
             print(line)
 
-# close the file that we opened
+# extra credit function
+def big_melon_order(log_file):
+    # second verse same as the first!
+    for line in log_file:
+        line = line.rstrip()
+        # make a new variable and split it up along any whitespace
+        line_list = line.split()
+        # if the number of melons we find is greater than 10
+        if (int(line_list[2]) > 10):
+            # print the line we are reading
+            print(line)
+
+# call the function with the file we opened at the start
 sales_reports(log_file)
+
+# go back to the beginning of the document
+log_file.seek(0, 0)
+
+# call the big melon order function
+big_melon_order(log_file)
+
+# close the file that we opened (I added this)
+log_file.close()
